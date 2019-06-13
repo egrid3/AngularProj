@@ -1,0 +1,20 @@
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<div class="container">
+  <h1 class="text-center" style="color:darkslategrey">My Blog</h1>
+  <br>
+  <form class="well" (submit)="addPost()">
+    <input class="form-control" [(ngModel)]="title" name="title" type="text" placeholder="Post Title">
+    <br><br>
+    <textarea class="form-control" [(ngModel)]="body" name="body" placeholder="Post Body"></textarea>
+    <br><br>
+    <input class="btn btn-primary btn-block" type="submit" value="Submit">
+  </form>
+  <br>
+  <div>
+      <h3>Example Post</h3>
+      <p style="text-indent:2rem">Sed ante nisl, tincidunt at elit a, bibendum egestas mi. Ut vitae eleifend lacus. Quisque accumsan in erat molestie rhoncus. Integer ac semper ex, at eleifend massa. Sed rhoncus, augue a pharetra accumsan, metus nunc pellentesque turpis, vitae auctor sem mauris a nunc. Cras gravida mauris quis accumsan eleifend. Aliquam faucibus purus aliquet nisi feugiat, id sagittis dui elementum. Duis vestibulum sapien sed urna faucibus porta. Nulla facilisi. Quisque imperdiet, odio sed vulputate laoreet, nulla ligula tempor velit, ac rutrum ligula ante id sem. Proin ullamcorper mollis magna vel porttitor. Aliquam aliquam urna nec lacus venenatis aliquet. Sed dignissim libero nulla, quis interdum elit aliquam vulputate. In non elit hendrerit, sollicitudin lacus quis, ornare metus. Curabitur a odio nisl.</p>
+    <div class="panel" *ngFor="let post of posts">
+      <h3>{{post.title}}</h3>
+      <p style="text-indent:2rem">{{post.body}}</p>
+    </div>
+  </div>
